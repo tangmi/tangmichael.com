@@ -11,3 +11,12 @@ layout: default
 </ul>
 
 <a href="{{site.baseurl}}/archive">archive of posts?</a>
+
+<ul>
+	{{site.github.owner_name}}
+	{% for repo in site.github.public_repositories %}
+	<li><a href="{{repo.html_url}}">{{repo.name}}</a> - {{repo.description}} {% if repo.fork %}(fork){% endif %}</li>
+	{% endfor %}
+</ul>
+
+<!-- https://developer.github.com/v3/repos/#list-organization-repositories -->
