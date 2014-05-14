@@ -11,7 +11,13 @@ url: http://tangmichael.com/
 
 markdown: redcarpet
 
-pygments: true
+highlighter: pygments
 permalink: /:title/
 
-exclude: [README.md]
+exclude: [README.md, Gemfile, Gemfile.lock, CNAME]
+
+gems:
+  - jekyll-sitemap
+  - jekyll-mentions
+  - jemoji
+  - jekyll-sass-converter
