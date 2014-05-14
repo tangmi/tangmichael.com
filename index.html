@@ -14,7 +14,9 @@ layout: default
 
 <ul>
 	{{site.github.owner_name}}
-	{% for repo in site.github.public_repositories %}
+
+	{% assign repos = site.github.public_repositories | sort_by:updated_at %}
+	{% for repo in repos %}
 	<li><a href="{{repo.html_url}}">{{repo.name}}</a> - {{repo.description}} {% if repo.fork %}(fork){% endif %}</li>
 	{% endfor %}
 </ul>
