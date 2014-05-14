@@ -1,0 +1,17 @@
+name: Tang, Michael
+description: a website to display my talents
+author: Michael Tang
+
+author_email: super@mtang.co
+
+paginate: 10
+
+# baseurl: http://tangmichael.com
+url: http://tangmichael.com/
+
+markdown: redcarpet
+
+pygments: true
+permalink: /:title/
+
+exclude: [README.md]

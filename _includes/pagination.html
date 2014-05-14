@@ -1,0 +1,27 @@
+<div id="pagination">
+
+	{% if paginator.previous_page %}
+	<p class="newer">
+		{% if paginator.previous_page == 1 %}
+		<a class="pagination-link" href="{{site.baseurl}}">Newer</a>
+		{% else %}
+		<a class="pagination-link" href="{{site.baseurl}}page{{paginator.previous_page}}">Newer</a>
+		{% endif %}
+	</p>
+	{% else %}
+	<p class="newer disabled">
+		<span>Newer</span>
+	</p>
+	{% endif %}
+
+	{% if paginator.next_page %}
+	<p class="older">
+		<a class="pagination-link" href="{{site.baseurl}}page{{paginator.next_page}}">Older</a>
+	</p>
+	{% else %}
+	<p class="older disabled">
+		<span>Older</span>
+	</p>
+	{% endif %}
+
+</div>
