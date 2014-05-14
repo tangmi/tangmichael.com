@@ -1,5 +1,5 @@
 name: Tang, Michael
-description: a website to display my talents
+description: a website for me!
 author: Michael Tang
 
 author_email: super@mtang.co
@@ -16,8 +16,11 @@ permalink: /:title/
 
 exclude: [README.md, Gemfile, Gemfile.lock, CNAME]
 
+sass:
+    style: :compressed
+
 gems:
   - jekyll-sitemap
-  - jekyll-mentions
   - jemoji
   - jekyll-sass-converter
+  # - jekyll-mentions

@@ -1,0 +1,14 @@
+@import "fonts";
+
+a {
+	
+	text-decoration: none;
+
+	&:link, &:visited {
+		color: #222;
+		border-bottom: 1px dashed gray;
+	}
+	&:hover {
+		color: gray;
+	}
+}
