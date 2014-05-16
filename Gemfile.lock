@@ -93,6 +93,5 @@ PLATFORMS
 
 DEPENDENCIES
   jekyll-mentions
-  jekyll-sass-converter
   jekyll-sitemap
   jemoji
