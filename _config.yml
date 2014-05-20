@@ -20,7 +20,7 @@ sass:
     style: :compressed
 
 gems:
-  - jekyll-sitemap
-  - jemoji
-  - jekyll-sass-converter
+  # - jekyll-sitemap
+  # - jemoji
+  # - jekyll-sass-converter
   # - jekyll-mentions
