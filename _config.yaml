@@ -1,0 +1,28 @@
+destination: ./_site
+plugins:     ./_plugins
+layouts:     ./_layouts
+data_source: ./_data
+collections:
+  projects:
+    output: true
+    permalink: /:name/
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "projects" # a collection in your site, in plural form
+    values:
+      layout: "project"
+      image_url: "http://placehold.it/300x200"
+
+exclude: ['README.md', 'CNAME']
+
+markdown:    kramdown
+highlighter: pygments
+
+permalink: /:title/
+
+sass:
+    sass_dir: _sass
+    # style: :compressed

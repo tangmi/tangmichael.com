@@ -1,7 +1,14 @@
-$(window).resize(function() {
+/** @jsx React.DOM */
+React.renderComponent(
+	React.DOM.h1(null, "Hello, world!"),
+	document.getElementById('example')
+);
+
+$(window).resize(function()  {
+	this;
 	console.log($(window).height());
 	$('.top').height($(window).height());
-});
+}.bind(this));
 
 $(window).resize();
 
@@ -19,7 +26,6 @@ var makeLimiter = function(fn, time) {
 		}
 	};
 };
-
 
 function print(message) {
 	console.log('action', message);

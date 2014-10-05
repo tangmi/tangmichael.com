@@ -1,3 +1,7 @@
-_site/
 !.gitkeep
+_site/
 .sass-cache/
+
+___old_site/_site/
+___old_site/.sass-cache/
+___old_site/node_modules/

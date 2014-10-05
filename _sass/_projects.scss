@@ -1,0 +1,69 @@
+.projects {
+	margin: 2em 0 0em;
+}
+
+.project {
+
+	// remove link styling
+	a {
+		&:link, &:visited {
+			color: inherit;
+			text-decoration: none;
+		}
+	}
+
+	// background-color: red;
+
+	$project-image-h: 200px;
+	$project-image-w: $project-image-h * 16 / 9;
+
+	display: inline-block;
+	margin: 0 1em 1em 0;
+
+	// min-width: 300px;
+	max-width: $project-image-w;
+
+	.project-image {
+		max-width: $project-image-w;
+		height: $project-image-h;
+		display: block;
+
+
+		&[src*=""] {
+		background-color: lightgray;
+		// border: 1px solid lightgray;
+
+		}
+
+		// background-size: cover;
+		// background-position: center center;
+	}
+
+	.project-title {
+		margin: 0;
+		padding: 0;
+
+		display: inline-block;
+	}
+
+	.project-date {
+		color: rgba(0, 0, 0, 0.5);
+		font-style: oblique;
+		font-weight: 300;
+		font-size: 0.85em;
+
+		// &:before {
+		// 	content: '(';
+		// }
+		// &:after {
+		// 	content: ')';
+		// }
+	}
+
+	.project-description {
+		margin: 0;
+		padding: 0;
+		display: inline-block;
+	}
+}
+

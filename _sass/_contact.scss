@@ -1,0 +1,40 @@
+section#contact {
+	$contact-font-size: 16px;
+	font-size: $contact-font-size;
+	
+	margin: 1em 0;
+
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+
+		li {
+			display: inline-block;
+
+			a {
+				
+
+				transition: border-bottom-color 0.2s ease;
+
+				&:link, &:visited {
+					color: black;
+					text-decoration: none;
+					border-bottom: 1px dashed gray;
+				}
+
+				&:hover, &:active {
+					border-bottom: 1px dashed transparent;
+				}
+			}
+
+			&:after {
+				content: '.';
+			}
+
+			&:last-child:after {
+				content: none;
+			}
+		}
+	}
+}

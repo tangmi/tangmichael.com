@@ -1,0 +1,19 @@
+{
+  "name": "tangmichael.com",
+  "scripts": {
+    "gulp": "./node_modules/.bin/gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/tangmi/tangmichael.com.git"
+  },
+  "private": true,
+  "devDependencies": {
+    "gulp": "^3.6.2",
+    "gulp-sass": "^0.7.1",
+    "gulp-react": "^0.3.3",
+    "gulp-uglify": "^0.3.0",
+    "gulp-util": "^2.2.14",
+    "colour": "^0.7.1"
+  }
+}

@@ -1,27 +1,83 @@
 ---
+title: Michael Tang
 layout: default
 ---
 
-<!-- <div class="top">
-	hello world?
-</div> -->
+<section id="site">
+	<header id="site-header">
+		<section id="site-header-name">
+			<a href="/">
+				<!-- <span id="site-header-name-tagline">Code &amp; Design</span> -->
+				<h1>Michael Tang</h1>
+			</a>
+		</section>
+	</header>
 
-<ul>
-	<li><a href="http://blog.michaeltang.me">writing (about code and stuff)</a></li>
-	<li><a href="http://tang.land">random projects</a></li>
-	<li><a href="http://github.com/tangmi">code (at github)</a></li>
-	<li><a href="http://www.linkedin.com/pub/michael-tang/55/288/3a4">social (professionally, at linkedin)</a></li>
-	<!-- <li><a href="{{site.baseurl}}assets/tangmichael-may-2014.pdf">resumé</a></li> -->
-</ul>
+	<main id="site-content">
+		<section id="contact">
+			<ul>
+				<li>
+					<a href="/resume-tangmi-2014au.pdf">Resume (pdf)</a>
+				</li>
+				<li>
+					Email: 
+					<script type="text/javascript">
+						var em =
+						[116, 97, 110, 103, 109, 105, 64, 117, 119, 46, 101, 100, 117]
+						.map(function(c) {
+							return String.fromCharCode(c);
+						})
+						.join('');
+						document.write('<a href="mailto:' + em + '">' + em + '</a>');
+					</script>
+				</li>
+				<li>
+					GitHub: <a href="https://github.com/tangmi/">@tangmi</a>
+				</li>
+				<li>
+					LinkedIn: <a href="http://www.linkedin.com/pub/michael-tang/55/288/3a4">Michael Tang</a>
+				</li>
+			</ul>
+		</section>
 
-<a href="{{site.baseurl}}archive">archive of posts?</a>
+		<sectioin class="works">
+			<header>
+				<h2>Work</h2>
+			</header>
+			{% for work in site.data.work %}
+			<section class="work">
+				{{work.place}}
+			</section>
+			{% endfor %}
+		</sectioin>
 
-<!-- <ul>
-	<b>{{site.github.owner_name}}'s repos</b>
+		<section class="projects">
+			<header>
+				<h2>Personal Projects</h2>
+			</header>
+			{% assign projects = site.projects | sort: 'date' | reverse %}
+			{% for project in projects %}
+			<section class="project">
+				<a href="{{project.url}}">
+					<img class="project-image" src="{{project.image_url}}" alt="&quot;{{project.title}}&quot; screenshot">
+					<h3 class="project-title">{{project.title}} <span class="project-date">
+					<!-- {% assign m = project.date | date: "%-m" %}
+					{% case m %}
+						{% when '12' or '1' or '2' %}Winter
+						{% when '3' or '4' or '5' %}Spring
+						{% when '6' or '7' or '8' %}Summer
+						{% when '9' or '10' or '11' %}Fall
+						{% endcase %} -->
+						{{ project.date | date: "%b %Y" }}
+					</span></h3>
+					<!-- <p class="project-description">{{project.description}}</p> -->
+				</a>
+			</section>
+			{% endfor %}
+		</section>
+	</main>
 
-	{% for repo in site.github.public_repositories %}
-	<li><a href="{{repo.html_url}}">{{repo.name}}</a> - {{repo.description}} {% if repo.fork %}(fork){% endif %}</li>
-	{% endfor %}
-</ul> -->
-
-<!-- https://developer.github.com/v3/repos/#list-organization-repositories -->
+	<footer id="site-footer">
+		
+	</footer>
+</section>

@@ -1,0 +1,113 @@
+// dontuse?
+
+$tooltip-background-color: rgba(0, 0, 0, 0.69);
+$tooltip-color: white;
+
+.tooltip {
+	position: relative;
+}
+
+[data-tooltip] {
+	position: relative;
+}
+
+[data-tooltip]:before,
+[data-tooltip]:after {
+	z-index: 1000;
+	color: $tooltip-color;
+	
+	display: block;
+	position: absolute;
+		// left: 0; right: 0; margin: auto; // to center horizontally
+
+	pointer-events: none;
+}
+
+$tooltip-arrow-size: 5px;
+$tooltip-offset-x: 19px;
+$tooltip-offset-y: 13px;
+
+[data-tooltip]:after {
+	background-color: $tooltip-background-color;
+	content: attr(data-tooltip);
+	width: auto;
+	max-width: intrinsic;
+	white-space: nowrap;
+	padding: 8px;
+	font-size: 14px;
+
+	margin-left: $tooltip-offset-x;
+	margin-top: $tooltip-offset-y;
+}
+
+// triangle
+[data-tooltip]:before {
+	content: '';
+	position: absolute;
+
+	margin-left: $tooltip-offset-x + 10;
+	margin-top: $tooltip-offset-y - $tooltip-arrow-size;
+
+	width: 0;
+	height: 0;
+	border-left: $tooltip-arrow-size solid transparent;
+	border-right: $tooltip-arrow-size solid transparent;
+
+	border-bottom: $tooltip-arrow-size solid $tooltip-background-color;
+}
+
+// animation
+[data-tooltip]:before,
+[data-tooltip]:after {
+	$tooltip-transition-speed: 0.54s;
+	transition: opacity $tooltip-transition-speed ease,
+				top $tooltip-transition-speed ease;
+	opacity: 0;
+	// bottom: $tooltip-offset-y - 15px;
+}
+[data-tooltip]:hover:before,
+[data-tooltip]:hover:after,
+[data-tooltip]:focus:before,
+[data-tooltip]:focus:after {
+	opacity: 1;
+	// bottom: $tooltip-offset-y;
+}
+
+// .tooltip span {
+// 	z-index: 10;
+// 	position: absolute;
+// 	display: block;
+
+// 	padding: 10px;
+// 	font-size: 14px;
+
+// 	color: white;
+// 	background-color: $tooltip-background-color;
+
+
+// 	transition: opacity 0.2s ease,
+// 				top 0.2s ease;
+
+// 	opacity: 0;
+// 	top: -15px;
+
+// }
+
+// .tooltip:hover span { 
+// 	opacity: 1;
+// 	top: 0;
+// }
+
+// .tooltip span:after {
+// 	content: '';
+// 	position: absolute;
+
+// 	$tooltip-arrow-size: 10px;
+
+// 	width: 0;
+// 	height: 0;
+// 	border-left: $tooltip-arrow-size solid transparent;
+// 	border-right: $tooltip-arrow-size solid transparent;
+
+// 	border-bottom: $tooltip-arrow-size solid $tooltip-background-color;
+// }

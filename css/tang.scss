@@ -1,0 +1,69 @@
+---
+# yaml front matter forces jekyll to compile sass
+---
+
+@import 'fonts';
+// @import 'tooltip';
+@import 'projects';
+@import 'contact';
+
+section#site {
+	margin: 50px;
+	// width: 853px;
+}
+
+header#site-header {
+	$header-font-size: 32px;
+	$header-font-stroke-width: $header-font-size / 8;
+	$header-font-padding-horizontal: $header-font-size / 3;
+	$header-font-padding-vertical: $header-font-padding-horizontal / 2;
+
+	// text-align: center;
+	
+	section#site-header-name {
+		display: inline-block;
+		font-family: 'Varela Round', sans-serif;
+
+		a {
+			display: inline-block;
+
+			&:link, &:visited {
+				text-decoration: none;
+				color: inherit;
+			}
+		}
+
+		.site-header-name-tagline {
+			font-size: $header-font-size / 3;
+		}
+
+		h1 {
+			margin: 0;
+			font-size: $header-font-size;
+		}
+
+		// hack to pad the inside of the header without extra tags
+		// & > * {
+		// 	padding: 0 $header-font-padding-horizontal;
+		// 	&:last-child {
+		// 		padding: $header-font-padding-vertical $header-font-padding-horizontal;
+		// 	}
+		// }
+
+		&:after {
+			content: '';
+			display: block;
+
+			background-color: black;
+			height: $header-font-stroke-width;
+			border-radius: $header-font-stroke-width;
+		}
+	}
+
+}
+
+
+footer#site-footer {
+
+
+}
