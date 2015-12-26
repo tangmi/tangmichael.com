@@ -1,0 +1,154 @@
+---
+# yaml front matter forces jekyll to compile sass
+---
+
+@import 'fonts';
+
+$a-very-dark-color-indeed: rgba(0, 0, 0, 0.85);
+$a-mid-neutral-color: gray;
+
+body {
+	margin: 0;
+	font-family: 'Source Sans Pro', sans-serif;
+
+	// display: flex;
+	// min-height: 100vh;
+	// flex-direction: column;
+}
+
+a {
+	// dashed gray underlines that dissapear on hover
+	&:link, &:visited {
+		color: black;
+		text-decoration: none;
+		border-bottom: 1px dashed $a-mid-neutral-color;
+	}
+	&:hover, &:active {
+		border-bottom: 1px dashed transparent;
+	}
+}
+
+header {
+	// header is a flexbox so i can rearrange the contents without modifying the html
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+
+	// as a flex child
+
+	height: 100vh;
+
+	margin: auto;
+
+	$main-offset: 4%;
+	margin-top: -$main-offset;
+	margin-bottom: $main-offset;
+	width: 450px;
+
+	// background-color: rgba(255, 255, 255, 0.9);
+	color: $a-very-dark-color-indeed;
+	
+	> #full-name {
+		// contains the styling for my name
+		// all caps, tang first, and michael upside-down
+
+		order: 0;
+		display: flex;
+		font-family: 'Montserrat', sans-serif;
+		text-transform: uppercase;
+		font-size: 3em;
+		padding: 0 10px;
+		/*border: 0.15em solid;*/
+
+		> #first-name {
+			align-self: flex-start;
+			transform: rotateX(180deg);
+			font-weight: 400;
+			// position: relative;
+			// top: -0.0em;
+		}
+
+		> #last-name {
+			order: -1;
+			align-self: flex-start;
+			font-weight: 700;
+			padding-right: 0.1em;
+		}
+	}
+
+	> #cool-selfie {
+		order: -1;
+
+		display: block;
+		padding: 0 10px;
+
+		img {
+			border-radius: 2000px;
+			// border-radius: 2px;
+		}
+	}
+
+	> #blurb {
+		order: 1;
+		font-size: 1.1em;
+		line-height: 1.7em;
+		text-align: center;
+		// width: 50%;
+
+		#punchline {
+			display: block;
+		}
+
+		em {
+			// font-style: normal;
+			// font-weight: 500;
+		}
+	}
+
+	> #resume {
+		order: 2;
+		
+		margin-top: 7px;
+		font-size: 1.1em;
+	}
+	
+	> #contact-links {
+		// forced to the top-right
+
+		position: absolute;
+		top: 0;
+		right: 20px;
+
+		ul {
+			list-style: none;
+			padding: 0;
+			width: 100%;
+
+			> li {
+				display: inline;
+
+				&:not(:last-child):after {
+					content: '/';
+					color: $a-mid-neutral-color;
+				}
+			}
+		}
+	}
+}
+
+footer {
+	// footer serves no purpose except easter egg
+
+	background-color: $a-very-dark-color-indeed;
+	color: white;
+	padding: 1em;
+	text-align: right;
+
+	#what-a-guy {
+		transition: 0.5s;
+		transform: rotateZ(5deg);
+
+		display: inline-block;
+	}
+}

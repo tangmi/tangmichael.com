@@ -1,0 +1,57 @@
+---
+title: Michael Tang
+layout: default
+---
+
+<header>
+	<div id="full-name">
+		<span id="first-name">Michael</span>
+		<span id="last-name">Tang</span>
+	</div>
+
+	<div id="blurb">
+		{{ site.data.extra_data.blurb.main }}
+		<span id="punchline">{{ site.data.extra_data.blurb.punchline }}</span>
+	</div>
+
+	<div id="contact-links">
+		<ul>
+			<li>
+				Email: 
+				<script type="text/javascript">
+					var em =
+					[116, 97, 110, 103, 109, 105, 64, 117, 119, 46, 101, 100, 117]
+					.map(function(c) {
+						return String.fromCharCode(c);
+					})
+					.join('');
+					document.write('<a href="mailto:' + em + '">' + em + '</a>');
+				</script>
+			</li>
+			<li>
+				GitHub: <a href="https://github.com/tangmi/">@tangmi</a>
+			</li>
+			<li>
+				LinkedIn: <a href="http://www.linkedin.com/pub/michael-tang/55/288/3a4">Michael Tang</a>
+			</li>
+		</ul>
+	</div>
+
+	<div id="resume">
+		<a href="/resume-tangmi-2014au.pdf">Resume (pdf)</a>
+	</div>
+
+	<div id="cool-selfie">
+		<img src="http://www.gravatar.com/avatar/8076f544dfec8170624783be1f156f51?s=100" />
+	</div>
+</header>
+
+<!-- 	<main>
+	hello world
+</main> -->
+
+<footer>
+	<div id="what-a-guy">
+		{{ site.data.extra_data.secret_text }}
+	</div>
+</footer>

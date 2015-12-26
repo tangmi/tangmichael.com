@@ -1,0 +1,18 @@
+destination: ./_site
+layouts_dir:     ./_layouts
+data_dir: ./_data
+collections:
+  projects:
+    output: true
+    permalink: /:name/
+
+exclude: ['README.md', 'CNAME']
+
+markdown:    kramdown
+highlighter: pygments
+
+permalink: /:title/
+
+sass:
+    sass_dir: _sass
+    # style: :compressed
