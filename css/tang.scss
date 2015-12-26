@@ -65,8 +65,10 @@ header {
 			align-self: flex-start;
 			transform: rotateZ(180deg);
 			font-weight: 400;
+
+			// push the text around to make it align up with the last name
 			position: relative;
-			top: 0.025em;
+			top: 0.03em;
 		}
 
 		> #last-name {
