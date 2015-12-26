@@ -1,4 +1,9 @@
+# extra data to decouple content and layout
+
 blurb:
   main: tasteful programming, design, and general maintenance —
   punchline: to make computing <em>slightly</em> more accesible for all
 secret_text: what a guy.
+
+resume_url: /resume-tangmi-2016wi.pdf
+nice_selfie_url: http://www.gravatar.com/avatar/8076f544dfec8170624783be1f156f51?s=400
