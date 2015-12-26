@@ -63,10 +63,10 @@ header {
 
 		> #first-name {
 			align-self: flex-start;
-			transform: rotateX(180deg);
+			transform: rotateZ(180deg);
 			font-weight: 400;
-			// position: relative;
-			// top: -0.0em;
+			position: relative;
+			top: 0.025em;
 		}
 
 		> #last-name {
