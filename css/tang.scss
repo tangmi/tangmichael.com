@@ -27,8 +27,6 @@ $padding-from-edges: 1.25em;
 
 body {
 	margin: 0;
-	font-family: 'Source Sans Pro', sans-serif;
-
 	background-color: $kinda-off-white;
 }
 
@@ -94,7 +92,6 @@ header {
 
 		order: 0;
 		display: flex;
-		font-family: 'Montserrat', sans-serif;
 		text-transform: uppercase;
 		font-size: 3em;
 		padding: 0 10px;
@@ -196,7 +193,7 @@ footer {
 		order: 1;
 
 		text-align: right;
-		
+
 		transition: 0.5s;
 		transform: rotateZ(5deg);
 	}
