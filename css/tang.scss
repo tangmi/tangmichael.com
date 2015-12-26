@@ -8,26 +8,40 @@ $a-very-dark-color-indeed: rgba(0, 0, 0, 0.85);
 $a-mid-neutral-color: gray;
 $kinda-off-white: rgb(248, 248, 248);
 
+$padding-from-edges: 1.25em;
+
+@mixin inline-list($separator) {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+
+	> li {
+		display: inline;
+
+		&:not(:last-child):after {
+			content: $separator;
+			color: $a-mid-neutral-color;
+		}
+	}
+}
+
 body {
 	margin: 0;
 	font-family: 'Source Sans Pro', sans-serif;
 
 	background-color: $kinda-off-white;
-
-	// display: flex;
-	// min-height: 100vh;
-	// flex-direction: column;
 }
 
 a {
 	// dashed gray underlines that dissapear on hover
+
 	&:link, &:visited {
 		color: black;
 		text-decoration: none;
 		border-bottom: 1px dashed $a-mid-neutral-color;
 	}
 	&:hover, &:active {
-		border-bottom: 1px dashed transparent;
+		border-color: transparent;
 	}
 }
 
@@ -44,7 +58,7 @@ header {
 
 	margin: auto;
 
-	$main-offset: 4%;
+	$main-offset: 4vh;
 	margin-top: -$main-offset;
 	margin-bottom: $main-offset;
 	width: 450px;
@@ -52,6 +66,28 @@ header {
 	// background-color: rgba(255, 255, 255, 0.9);
 	color: $a-very-dark-color-indeed;
 	
+	a {
+		// header links have an orange highlight that quickly fades in and out
+		$highlight-color: rgb(255, 212, 23);
+		
+		// a small padding to make links look a little nicer
+		padding: 0 0.15em;
+
+		&:link, &:visited {
+			transition: background-color 0.1s steps(4, end) 0s,
+			            border-color 0.1s step-end 0s;
+		}
+		&:hover, &:active {
+			// transition is defined twice pop in the border color only when the orange is not present
+			// the border-radius causes issues with the dashed offset
+			transition: background-color 0.1s steps(4, end) 0s,
+			            border-color 0s step-end 0s;
+
+			background-color: $highlight-color;
+			border-radius: 2px;
+		}
+	}
+
 	> #full-name {
 		// contains the styling for my name
 		// all caps, tang first, and michael upside-down
@@ -101,7 +137,7 @@ header {
 		text-align: center;
 		// width: 50%;
 
-		#punchline {
+		> #punchline {
 			display: block;
 		}
 
@@ -122,38 +158,46 @@ header {
 		// forced to the top-right
 
 		position: absolute;
-		top: 0;
-		right: 20px;
+		top: 1em;
+		right: $padding-from-edges;
 
 		ul {
-			list-style: none;
-			padding: 0;
+			@include inline-list('/');
 			width: 100%;
-
-			> li {
-				display: inline;
-
-				&:not(:last-child):after {
-					content: '/';
-					color: $a-mid-neutral-color;
-				}
-			}
 		}
 	}
 }
 
 footer {
-	// footer serves no purpose except easter egg
+	// footer serves no purpose except easter egg and maybe some skills tags
+	display: flex;
+	justify-content: space-between;
 
 	background-color: $a-very-dark-color-indeed;
 	color: white;
-	padding: 1em;
-	text-align: right;
+	padding: 1em $padding-from-edges;
+	color: gray;
 
-	#what-a-guy {
+	div {
+		display: inline-block;
+	}
+
+	> #skills {
+		order: -1;
+
+		text-align: left;
+
+		ul {
+			@include inline-list(',');
+		}
+	}
+
+	> #what-a-guy {
+		order: 1;
+
+		text-align: right;
+		
 		transition: 0.5s;
 		transform: rotateZ(5deg);
-
-		display: inline-block;
 	}
 }

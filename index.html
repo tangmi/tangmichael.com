@@ -14,31 +14,22 @@ layout: default
 		<span id="punchline">{{ site.data.extra_data.blurb.punchline }}</span>
 	</div>
 
+	<div id="resume">
+		<a href="{{ site.data.extra_data.resume_url }}" title="Last updated {{ site.data.extra_data.resume_last_updated_date }}">Resume (pdf)</a>
+	</div>
+
 	<div id="contact-links">
 		<ul>
 			<li>
-				Email: 
-				<script type="text/javascript">
-					var em =
-					[116, 97, 110, 103, 109, 105, 64, 117, 119, 46, 101, 100, 117]
-					.map(function(c) {
-						return String.fromCharCode(c);
-					})
-					.join('');
-					document.write('<a href="mailto:' + em + '">' + em + '</a>');
-				</script>
+				Email: <script type="text/javascript">document.write(em_link([116, 97, 110, 103, 109, 105], [64, 117, 119, 46, 101, 100, 117], 'tm'));</script>
 			</li>
 			<li>
-				GitHub: <a href="https://github.com/tangmi/">@tangmi</a>
+				GitHub: <a href="https://github.com/tangmi/" title="GitHub profile">@tangmi</a>
 			</li>
 			<li>
-				LinkedIn: <a href="http://www.linkedin.com/pub/michael-tang/55/288/3a4">Michael Tang</a>
+				LinkedIn: <a href="http://www.linkedin.com/pub/michael-tang/55/288/3a4" title="LinkedIn Profile">Michael Tang</a>
 			</li>
 		</ul>
-	</div>
-
-	<div id="resume">
-		<a href="{{ site.data.extra_data.resume_url }}">Resume (pdf)</a>
 	</div>
 
 	<div id="cool-selfie">
@@ -46,11 +37,18 @@ layout: default
 	</div>
 </header>
 
-<!-- 	<main>
-	hello world
-</main> -->
-
 <footer>
+	<div id="skills">
+		<ul>
+		<li>Javascript</li>
+		<li>UX Design</li>
+		<li>Web Dev</li>
+		<li>C++</li>
+		<li>Graphics</li>
+		<li>FRP</li>
+		<li>etc.</li>
+		</ul>
+	</div>
 	<div id="what-a-guy">
 		{{ site.data.extra_data.secret_text }}
 	</div>

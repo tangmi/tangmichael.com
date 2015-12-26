@@ -1,13 +1,22 @@
+function em_link(fst, snd, tag) {
+	var em_fst = String.fromCharCode.apply(this, fst);
+	var em_tag = '+' + tag;// + (Math.random().toString(16).substr(2, 2));
+	var em_snd = String.fromCharCode.apply(this, snd);
+	var em = [em_fst, em_snd].join('');
+	var em_tagged = [em_fst, em_tag, em_snd].join('');
+	return '<a href="mailto:' + em_tagged + '" title="Email me">' + em + '</a>';
+}
+
 contentLoaded(window, function() {
-	var bg_image = document.createElement('div');
-	bg_image.style.zIndex = '-1000';
-	bg_image.style.width = '100%';
-	bg_image.style.height = window.innerHeight + 'px';
-	// bg_image.style.background = 'transparent url("bg.jpg") no-repeat scroll center center / cover';
-	bg_image.style.position = 'absolute';
-	bg_image.style.top = '0';
-	bg_image.style.left = '0';
-	document.body.appendChild(bg_image);
+	// var bg_image = document.createElement('div');
+	// bg_image.style.zIndex = '-1000';
+	// bg_image.style.width = '100%';
+	// bg_image.style.height = window.innerHeight + 'px';
+	// // bg_image.style.background = 'transparent url("bg.jpg") no-repeat scroll center center / cover';
+	// bg_image.style.position = 'absolute';
+	// bg_image.style.top = '0';
+	// bg_image.style.left = '0';
+	// document.body.appendChild(bg_image);
 
 	// if we don't have the vh units
 	// var landing_page_margin = 50;
@@ -16,6 +25,7 @@ contentLoaded(window, function() {
 	// landing_page.style.marginTop = landing_page_margin + 'px';
 	// landing_page.style.marginBottom = landing_page_margin + 'px';
 
+	// "fix" the easter egg
 	document.getElementById('what-a-guy').onmouseover = function(e) {
 		e.target.style.transform = 'rotateZ(0)';
 	};
