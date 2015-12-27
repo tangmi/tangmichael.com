@@ -62,7 +62,7 @@ a {
 	}
 }
 
-header {
+header {	
 	// header is a flexbox so i can rearrange the contents without modifying the html
 	@include flex();
 	@include flex-direction(column);
@@ -113,11 +113,21 @@ header {
 		padding: 0 10px;
 		/*border: 0.15em solid;*/
 
+		> span {
+			//  ???         ??           ??      ?
+			//       ???            ?
+			// ?   hack for safari's rotateZ... ??
+			//   ?           ??            ??
+			//  ?   ???          ?      ??          ?
+			display: block;
+		}
+
 		> #first-name {
-			@include flex-align-self(flex-start);
 			@include flex-order(0);
+			@include flex-align-self(flex-start);
 
 			@include prefixed-rotateZ(180deg);
+
 			font-weight: 400;
 
 			// push the text around to make it align up with the last name
