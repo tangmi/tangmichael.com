@@ -8,6 +8,7 @@
 $a-very-dark-color-indeed: rgba(0, 0, 0, 0.85);
 $a-mid-neutral-color: gray;
 $kinda-off-white: rgb(248, 248, 248);
+$highlight-color: rgb(255, 212, 23);
 
 $padding-from-edges: 1.25em;
 
@@ -31,6 +32,18 @@ $padding-from-edges: 1.25em;
 	transform: rotateZ($degrees);
 }
 
+html {
+	// hack to get the scroll-past-end thing working on desktop browsers
+	// TODO: should this be prefixed for all browsers?
+	background: -webkit-gradient(
+	    linear,
+	    left top,
+	    left bottom,
+	    color-stop(0.5, $highlight-color),
+	    color-stop(0.5, $kinda-off-white)
+	);
+}
+
 body {
 	margin: 0;
 	background-color: $kinda-off-white;
@@ -52,8 +65,8 @@ a {
 header {
 	// header is a flexbox so i can rearrange the contents without modifying the html
 	@include flex();
-	@include flex-justify-content(center);
 	@include flex-direction(column);
+	@include flex-justify-content(center);
 	@include flex-align-items(center);
 
 	height: 100vh;
@@ -69,7 +82,6 @@ header {
 	
 	a {
 		// header links have an orange highlight that quickly fades in and out
-		$highlight-color: rgb(255, 212, 23);
 		
 		// a small padding to make links look a little nicer
 		padding: 0 0.15em;
@@ -176,12 +188,12 @@ header {
 footer {
 	// footer serves no purpose except easter egg and maybe some skills tags
 	@include flex();
+	@include flex-direction(row);
 	@include flex-justify-content(space-between);
 
 	background-color: $a-very-dark-color-indeed;
-	color: white;
 	padding: 1em $padding-from-edges;
-	color: gray;
+	color: $a-mid-neutral-color;
 
 	div {
 		display: inline-block;

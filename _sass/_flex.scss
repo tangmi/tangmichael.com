@@ -30,7 +30,10 @@ $browsers-to-support: webkit;
 @mixin flex-direction($direction) {
 	@if $direction == column {
 		-webkit-box-orient: vertical;
-		// @debug "-webkit-box-orient: vertical; workaround used"
+	}
+	
+	@if $direction == row {
+		-webkit-box-orient: horizontal;
 	}
 
 	@include prefix((
@@ -63,7 +66,11 @@ $browsers-to-support: webkit;
 }
 
 @mixin flex-justify-content($method) {
-	-webkit-box-pack: $method;
+	@if $method == justify-content {
+		-webkit-box-pack: justify;
+	} @else {
+		-webkit-box-pack: $method;
+	}
 	
 	@include prefix((
 		justify-content: $method
