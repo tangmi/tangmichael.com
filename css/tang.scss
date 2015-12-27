@@ -3,6 +3,7 @@
 ---
 
 @import 'fonts';
+@import 'flex';
 
 $a-very-dark-color-indeed: rgba(0, 0, 0, 0.85);
 $a-mid-neutral-color: gray;
@@ -50,13 +51,12 @@ a {
 
 header {
 	// header is a flexbox so i can rearrange the contents without modifying the html
-	display: flex;
-	justify-content: center;
-	flex-direction: column;
-	align-items: center;
+	@include flex();
+	@include flex-justify-content(center);
+	@include flex-direction(column);
+	@include flex-align-items(center);
 
 	height: 100vh;
-
 	margin: auto;
 
 	$main-offset: 4vh;
@@ -93,16 +93,18 @@ header {
 		// contains the styling for my name
 		// all caps, tang first, and michael upside-down
 
-		order: 0;
-		display: flex;
+		@include flex-order(0);
+		@include flex();
+
 		text-transform: uppercase;
 		font-size: 3em;
 		padding: 0 10px;
 		/*border: 0.15em solid;*/
 
 		> #first-name {
-			align-self: flex-start;
-			
+			@include flex-align-self(flex-start);
+			@include flex-order(0);
+
 			@include prefixed-rotateZ(180deg);
 			font-weight: 400;
 
@@ -112,15 +114,16 @@ header {
 		}
 
 		> #last-name {
-			order: -1;
-			align-self: flex-start;
+			@include flex-order(-1);
+			@include flex-align-self(flex-start);
+
 			font-weight: 700;
 			padding-right: 0.25em;
 		}
 	}
 
 	> #cool-selfie {
-		order: -1;
+		@include flex-order(-1);
 
 		display: block;
 		padding-bottom: 3px;
@@ -132,7 +135,8 @@ header {
 	}
 
 	> #blurb {
-		order: 1;
+		@include flex-order(1);
+
 		font-size: 1.1em;
 		line-height: 1.7em;
 		text-align: center;
@@ -149,7 +153,7 @@ header {
 	}
 
 	> #resume {
-		order: 2;
+		@include flex-order(2);
 		
 		margin-top: 7px;
 		font-size: 1.1em;
@@ -171,8 +175,8 @@ header {
 
 footer {
 	// footer serves no purpose except easter egg and maybe some skills tags
-	display: flex;
-	justify-content: space-between;
+	@include flex();
+	@include flex-justify-content(space-between);
 
 	background-color: $a-very-dark-color-indeed;
 	color: white;
@@ -184,7 +188,7 @@ footer {
 	}
 
 	> #skills {
-		order: -1;
+		@include flex-order(-1);
 
 		text-align: left;
 
@@ -194,7 +198,7 @@ footer {
 	}
 
 	> #what-a-guy {
-		order: 1;
+		@include flex-order(1);
 
 		text-align: right;
 
@@ -250,7 +254,7 @@ footer {
 		}
 
 		> #blurb {
-			order: 1;
+			@include flex-order(1);
 
 			padding: 0 3em;
 			padding-top: 1em;
@@ -266,7 +270,7 @@ footer {
 		}
 
 		> #resume {
-			order: 2;
+			@include flex-order(2);
 			
 			margin-top: 1em;
 			font-size: 1.1em;
@@ -277,7 +281,7 @@ footer {
 		}
 		
 		> #contact-links {
-			order: 9;
+			@include flex-order(9);
 
 			position: static;
 

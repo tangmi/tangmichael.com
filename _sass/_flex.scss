@@ -1,0 +1,99 @@
+// flexbox macros for prefixing
+
+@mixin prefix($declarations, $prefixes: ()) {
+	@each $property, $value in $declarations {
+		@each $prefix in $prefixes {
+			#{'-' + $prefix + '-' + $property}: $value;
+		}
+
+		// Output standard non-prefixed declaration
+		#{$property}: $value;
+	}
+}
+
+$browsers-to-support: webkit;
+
+@mixin flex() {
+	display: -webkit-box; // OLD - iOS 6-, Safari 3.1-6 
+
+	@include prefix((
+		display: flex
+	), $browsers-to-support);
+}
+
+@mixin flex-basis($basis) {
+	@include prefix((
+		flex-basis: $basis
+	), $browsers-to-support);
+}
+
+@mixin flex-direction($direction) {
+	@if $direction == column {
+		-webkit-box-orient: vertical;
+		// @debug "-webkit-box-orient: vertical; workaround used"
+	}
+
+	@include prefix((
+		flex-direction: $direction
+	), $browsers-to-support);
+}
+
+@mixin flex-flow($flow) {
+	@include prefix((
+		flex-flow: $flow
+	), $browsers-to-support);
+}
+
+@mixin flex-grow($grow) {
+	@include prefix((
+		flex-grow: $grow
+	), $browsers-to-support);
+}
+
+@mixin flex-shrink($shrink) {
+	@include prefix((
+		flex-shrink: $shrink
+	), $browsers-to-support);
+}
+
+@mixin flex-wrap($wrap) {
+	@include prefix((
+		flex-wrap: $wrap
+	), $browsers-to-support);
+}
+
+@mixin flex-justify-content($method) {
+	-webkit-box-pack: $method;
+	
+	@include prefix((
+		justify-content: $method
+	), $browsers-to-support);
+}
+
+@mixin flex-order($order) {
+	// OLD - iOS 6-, Safari 3.1-6 (also)
+	$positive-value: ($order + 100);
+	@if $positive-value <= 0 {
+		@error "flex-order value + 100 is still smaller than 1"
+	}
+	-webkit-box-ordinal-group: $positive-value;
+	// -ms-flex-order: $order;
+
+	@include prefix((
+		order: $order
+	), $browsers-to-support);
+}
+
+@mixin flex-align-items($method) {
+	-webkit-box-align: $method; // OLD
+
+	@include prefix((
+		align-items: $method
+	), $browsers-to-support);
+}
+
+@mixin flex-align-self($method) {
+	@include prefix((
+		align-self: $method
+	), $browsers-to-support);
+}
