@@ -224,9 +224,12 @@ footer {
 
 		text-align: right;
 
-		transition: 0.5s;
+		transition: 0.5s ease-out;
 
 		@include prefixed-rotateZ(5deg);
+		&.fixed {
+			@include prefixed-rotateZ(0deg);
+		}
 	}
 }
 
@@ -244,7 +247,8 @@ footer {
 	header {
 		width: 100%;
 		
-		margin: 1em 0;
+		margin: 0;
+		padding: 1em 0;
 
 		line-height: 1.5em;
 

@@ -27,7 +27,8 @@ contentLoaded(window, function() {
 
 	// "fix" the easter egg
 	document.getElementById('what-a-guy').onmouseover = function(e) {
-		e.target.style.transform = 'rotateZ(0)';
+		e.target.className += ' fixed';
+		delete document.getElementById('what-a-guy').onmouseover;
 	};
 });
 
