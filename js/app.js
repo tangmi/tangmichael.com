@@ -8,22 +8,22 @@ function em_link(fst, snd, tag) {
 }
 
 contentLoaded(window, function() {
-	// var bg_image = document.createElement('div');
-	// bg_image.style.zIndex = '-1000';
-	// bg_image.style.width = '100%';
-	// bg_image.style.height = window.innerHeight + 'px';
-	// // bg_image.style.background = 'transparent url("bg.jpg") no-repeat scroll center center / cover';
-	// bg_image.style.position = 'absolute';
-	// bg_image.style.top = '0';
-	// bg_image.style.left = '0';
-	// document.body.appendChild(bg_image);
-
 	// if we don't have the vh units
 	// var landing_page_margin = 50;
 	// var landing_page = document.getElementsByTagName('header')[0];
 	// landing_page.style.height = (window.innerHeight - 2*landing_page_margin) + 'px';
 	// landing_page.style.marginTop = landing_page_margin + 'px';
 	// landing_page.style.marginBottom = landing_page_margin + 'px';
+
+	// var bg_image = document.createElement('div');
+	// bg_image.style.zIndex = '-1000';
+	// bg_image.style.width = '100%';
+	// bg_image.style.height = landing_page.style.height;
+	// // bg_image.style.background = 'transparent url("bg.jpg") no-repeat scroll center center / cover';
+	// bg_image.style.position = 'absolute';
+	// bg_image.style.top = '0';
+	// bg_image.style.left = '0';
+	// document.body.appendChild(bg_image);
 
 	// "fix" the easter egg
 	document.getElementById('what-a-guy').onmouseover = function(e) {
