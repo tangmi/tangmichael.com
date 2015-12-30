@@ -7,7 +7,28 @@ function em_link(fst, snd, tag) {
 	return '<a href="mailto:' + em_tagged + '" title="Email me">' + em + '</a>';
 }
 
+function make_tooltip(el, content) {
+	var parent_el = el.parentNode;
+	var tooltip_el = document.createElement('span');
+	tooltip_el.innerHTML = content;
+	tooltip_el.setAttribute('data-tooltip', '');
+	parent_el.appendChild(tooltip_el);
+
+	el.onmouseover = function() {
+		tooltip_el.className += ' visible';
+	};
+
+	el.onmouseout = function() {
+		tooltip_el.className = tooltip_el.className.replace(/\s*visible/, '');
+	};
+}
+
 contentLoaded(window, function() {
+	var resume_link = document.getElementById('resume_url');
+	make_tooltip(resume_link, resume_link.title);
+	resume_link.title = '';
+
+
 	// if we don't have the vh units
 	// var landing_page_margin = 50;
 	// var landing_page = document.getElementsByTagName('header')[0];

@@ -2,13 +2,11 @@
 # yaml front matter forces jekyll to compile sass
 ---
 
+@import 'globals';
 @import 'fonts';
 @import 'flex';
+@import 'tooltip';
 
-$a-very-dark-color-indeed: rgba(0, 0, 0, 0.85);
-$a-mid-neutral-color: gray;
-$kinda-off-white: rgb(248, 248, 248);
-$highlight-color: rgb(255, 212, 23);
 
 $padding-from-edges: 1.25em;
 
@@ -177,8 +175,14 @@ header {
 	> #resume {
 		@include flex-order(2);
 		
-		margin-top: 7px;
+		margin-top: 1.1em;
 		font-size: 1.1em;
+
+		text-align: center;
+
+		a {
+			padding: 0.5em;
+		}
 	}
 	
 	> #contact-links {
@@ -233,7 +237,7 @@ footer {
 	}
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: $response-width-treshold) {
 	body {
 		// background-color: lightgreen;
 

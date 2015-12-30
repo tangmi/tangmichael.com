@@ -1,0 +1,57 @@
+$tooltip-background-color: rgba(0, 0, 0, 0.69);
+$tooltip-color: white;
+$tooltip-arrow-size: 8px;
+$tooltip-offset-y: 1.1em;
+
+[data-tooltip] {
+	display: block;
+	font-size: 0.8em;
+	margin-top: $tooltip-offset-y;
+}
+
+@media screen and (min-width: $response-width-treshold) {
+	[data-tooltip] {
+		display: block;
+
+		font-weight: 300;
+		color: $tooltip-color;
+		background: $tooltip-background-color;
+		border-radius: 2px;
+		
+		padding: 0.5em;
+		position: relative;
+
+		&:before {
+			content: '';
+			position: absolute;
+			top: -$tooltip-arrow-size;
+			left: 50%;
+
+			margin-left: -$tooltip-arrow-size;
+
+			width: 0;
+			height: 0;
+			border-left: $tooltip-arrow-size solid transparent;
+			border-right: $tooltip-arrow-size solid transparent;
+
+			border-bottom: $tooltip-arrow-size solid $tooltip-background-color;
+		}
+
+		// hover in/out
+		transition: opacity 0.1s steps(4, end) 0.1s;
+		opacity: 0;
+		&.visible {
+			opacity: 1;
+		}
+	}
+}
+
+@media screen and (max-width: $response-width-treshold) {
+	[data-tooltip] {
+		// disabled on mobile, because i couldn't figure out how
+		// to space stuff out on the iphone so it looks liek there's
+		// still more stuff to scroll
+		display: none;
+		// transition: opacity 0s linear 0s;
+	}
+}
