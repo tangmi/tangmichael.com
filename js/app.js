@@ -1,10 +1,10 @@
-function em_link(fst, snd, tag) {
+function em_link(name, fst, snd, tag) {
 	var em_fst = String.fromCharCode.apply(this, fst);
 	var em_tag = '+' + tag;// + (Math.random().toString(16).substr(2, 2));
 	var em_snd = String.fromCharCode.apply(this, snd);
 	var em = [em_fst, em_snd].join('');
 	var em_tagged = [em_fst, em_tag, em_snd].join('');
-	return '<a href="mailto:' + em_tagged + '" title="Email me">' + em + '</a>';
+	return '<a href="mailto:' + name + ' <' + em_tagged + '>" title="Email me">' + em + '</a>';
 }
 
 function make_tooltip(el, content) {
