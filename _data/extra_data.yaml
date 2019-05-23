@@ -1,9 +1,19 @@
 # extra data to decouple content and layout
 
 blurb:
-  main: tasteful&nbsp;programming, design, and&nbsp;general&nbsp;maintenance&nbsp;—
-  punchline: to make computing <em>slightly</em> more accesible&nbsp;for&nbsp;all
+  main: graphics&nbsp;programming, design,&nbsp;and&nbsp;music&nbsp;—
+  punchline: attempting to make computing more&nbsp;accesible&nbsp;for&nbsp;all
 secret_text: what a guy.
+
+skills:
+ - Rust
+ - C#
+ - Javascript
+ - DirectX 11
+ - OpenGL
+ - Emscripten/WebGL
+ - WebGPU
+ - Metal
 
 resume_url: /resume-tangmi-2016wi.pdf
 resume_last_updated_date: winter 2016

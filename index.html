@@ -15,19 +15,23 @@ layout: default
 	</div>
 
 	<div id="resume">
-		<a id="resume_url" href="{{ site.data.extra_data.resume_url }}" title="Last updated {{ site.data.extra_data.resume_last_updated_date }}">Resume (pdf)</a>
+		<a id="resume_url" href="{{ site.data.extra_data.resume_url }}"
+			title="Last updated {{ site.data.extra_data.resume_last_updated_date }}">Resume (pdf)</a>
 	</div>
 
 	<div id="contact-links">
 		<ul>
 			<li>
-				Email: <script type="text/javascript">document.write(em_link('Michael Tang', [116, 97, 110, 103, 109, 105], [64, 117, 119, 46, 101, 100, 117], 'tm'));</script>
+				Email:
+				<script
+					type="text/javascript">document.write(em_link('Michael Tang', [116, 97, 110, 103, 109, 105], [64, 117, 119, 46, 101, 100, 117], 'tm'));</script>
 			</li>
 			<li>
 				GitHub: <a href="https://github.com/tangmi/" title="GitHub profile">@tangmi</a>
 			</li>
 			<li>
-				LinkedIn: <a href="http://www.linkedin.com/pub/michael-tang/55/288/3a4" title="LinkedIn Profile">Michael Tang</a>
+				LinkedIn: <a href="http://www.linkedin.com/pub/michael-tang/55/288/3a4" title="LinkedIn Profile">Michael
+					Tang</a>
 			</li>
 		</ul>
 	</div>
@@ -40,13 +44,10 @@ layout: default
 <footer>
 	<div id="skills">
 		<ul>
-		<li>Javascript</li>
-		<li>UX Design</li>
-		<li>Web Dev</li>
-		<li>C++</li>
-		<li>Graphics</li>
-		<li>FRP</li>
-		<li>etc.</li>
+			{% for skill in site.data.extra_data.skills %}
+			<li>{{skill}}</li>
+			{% endfor %}
+			<li>etc.</li>
 		</ul>
 	</div>
 	<div id="what-a-guy">
